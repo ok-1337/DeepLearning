@@ -22,7 +22,7 @@ SRCS:= nvdsparsebbox_detectnet.cpp
 OBJS:= nvdsparsebbox_detectnet.o
 
 CFLAGS += -std=c++11 -fPIC
-CFLAGS += -I../../includes
+CFLAGS += -I/home/dlinano/deepstream_sdk_v4.0.2_jetson/sources/includes/
 
 LDFLAGS:= -shared
 
