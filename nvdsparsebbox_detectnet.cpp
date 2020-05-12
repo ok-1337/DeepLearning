@@ -75,9 +75,9 @@ bool NvDsInferParseCustomDetectnet (std::vector<NvDsInferLayerInfo> const &outpu
     classMismatchWarn = true;
   }
 
-  std::cerr << "-----------------------------------------------" << std::endl;
-  std::cerr << "--- COVLAYERIDX: " << covLayerIndex << " ---" << std::endl;
-  std::cerr << "-----------------------------------------------" << std::endl;
+  // std::cerr << "-----------------------------------------------" << std::endl;
+  // std::cerr << "--- COVLAYERIDX: " << covLayerIndex << " ---" << std::endl;
+  // std::cerr << "-----------------------------------------------" << std::endl;
 
   /* Calculate the number of classes to parse */
   numClassesToParse = MIN (covLayerDims.c,
@@ -92,9 +92,9 @@ bool NvDsInferParseCustomDetectnet (std::vector<NvDsInferLayerInfo> const &outpu
   int cell_height = networkInfo.height / gridH;
 
 
-  std::cerr << "-----------------------------------------------" << std::endl;
-  std::cerr << "--- NETWORK INFO WIDTH : " << networkInfo.width << " HEIGHT : " << networkInfo.height <<
-  	 " NUM-CLASSES->" << numClassesToParse << std::endl;
+  // std::cerr << "-----------------------------------------------" << std::endl;
+  // std::cerr << "--- NETWORK INFO WIDTH : " << networkInfo.width << " HEIGHT : " << networkInfo.height <<
+  // 	 " NUM-CLASSES->" << numClassesToParse << std::endl;
 
   for (int c = 0; c < numClassesToParse; c++)
   {
@@ -106,11 +106,11 @@ bool NvDsInferParseCustomDetectnet (std::vector<NvDsInferLayerInfo> const &outpu
 
     float threshold = detectionParams.perClassThreshold[c];
 
-    std::cerr << "-----------------------------------------------" << std::endl;
-    std::cerr << "--- CLASS INFO ID : " << c << " THRESHOLD : " << threshold <<  std::endl;
-    std::cerr << "--- GRIDW : " << gridW << " GRIDH : " << gridH <<  std::endl;
-    std::cerr << "--- GRIDSIZE : " << gridSize <<  std::endl;
-    std::cerr << "-----------------------------------------------" << std::endl;
+    // std::cerr << "-----------------------------------------------" << std::endl;
+    // std::cerr << "--- CLASS INFO ID : " << c << " THRESHOLD : " << threshold <<  std::endl;
+    // std::cerr << "--- GRIDW : " << gridW << " GRIDH : " << gridH <<  std::endl;
+    // std::cerr << "--- GRIDSIZE : " << gridSize <<  std::endl;
+    // std::cerr << "-----------------------------------------------" << std::endl;
 
     for (int h = 0; h < gridH; h++)
     {
@@ -146,10 +146,10 @@ bool NvDsInferParseCustomDetectnet (std::vector<NvDsInferLayerInfo> const &outpu
           object.height = CLIP(rectY2f, 0, networkInfo.height - 1) -
                              object.top + 1;
 
-	  std::cerr << "Bounding BOX DETECTED ClassID:"<< object.classId << std::endl;
-	  std::cerr << " Confidence:" << object.detectionConfidence << std::endl <<
-	  " BBOX COORDS: ["<< object.left << "," << object.top << "," << object.width << "," << object.height << "]"
-          << std::endl;
+	  // std::cerr << "Bounding BOX DETECTED ClassID:"<< object.classId << std::endl;
+	  // std::cerr << " Confidence:" << object.detectionConfidence << std::endl <<
+	  // " BBOX COORDS: ["<< object.left << "," << object.top << "," << object.width << "," << object.height << "]"
+    //       << std::endl;
 
           objectList.push_back(object);
         }
